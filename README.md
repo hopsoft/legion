@@ -33,7 +33,7 @@ class Worker < Legion::Object
 end
 ```
 
-Use the Legion::Object defined above.
+Use a supervisor to perform work concurrently.
 
 ```ruby
 def work_fast
@@ -46,5 +46,14 @@ def work_fast
 
   supervisor.stop
 end
+```
+
+## Demo
+
+The demo runs the code in [this file](https://github.com/hopsoft/legion/blob/master/bin/legion_demo).
+
+```
+gem install legion
+legion_demo
 ```
 

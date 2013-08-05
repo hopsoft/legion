@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby --
+
+require "legion"
+
+class Example < Legion::Object
+  before(:work) { puts "before hook invoked" }
+
+  def work(index)
+    puts "working on: #{index} ... sleeping for 2 seconds"
+    sleep 2
+  end
+end
+
+def run_example
+  puts "Starting 4 processes to run the demo."
+  supervisor = Legion::Supervisor.new(Example, processes: 4, port: 52042)
+  supervisor.start
+  1000.times { |i| supervisor.work(i) }
+  supervisor.stop
+end
+
+run_example
+
