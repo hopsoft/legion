@@ -44,7 +44,7 @@ def work_fast
   supervisor.start
 
   1000.times do |i|
-    worker = supervisor.work # the supervisor asynchronously delegates to the worker
+    supervisor.work # the supervisor asynchronously delegates to the worker
   end
 
   supervisor.stop
