@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'shared/version'
+require 'legion/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "legion"
-  spec.version       = Shared::VERSION
+  spec.version       = Legion::VERSION
   spec.authors       = ["Nathan Hopkins"]
   spec.email         = ["natehop@gmail.com"]
   spec.description   = "True concurrent processing power made easy... even for MRI."
