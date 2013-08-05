@@ -12,6 +12,8 @@ Legion leverages distibuted Ruby (DRb) & threads to provide real concurrency.
 * Takes care of the heavy lifting for you
 * Lets you focus on business logic
 
+*Requires Ruby 2.0*
+
 ## Quick Start
 
 Create a class that performs a single task.
