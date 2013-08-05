@@ -37,7 +37,7 @@ def work_fast
 
   1000.times do |i|
     worker = supervisor.get_remote_instance
-    worker.work
+    worker.work_async
   end
 
   supervisor.stop_remote_instances
