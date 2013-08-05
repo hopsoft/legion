@@ -8,6 +8,7 @@
 Legion leverages distibuted Ruby (DRb) & threads to provide real concurrency.
 
 * Works for all Rubies (including MRI)
+* Works within Rails & other frameworks
 * Takes care of the heavy lifting for you
 * Lets you focus on business logic
 
