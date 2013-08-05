@@ -1,4 +1,4 @@
-require_relative "../lib/legion"
+require "legion"
 
 class Example < Legion::Object
   before(:work) { puts "before work" }
