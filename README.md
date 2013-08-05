@@ -1,6 +1,11 @@
-### True concurrent processing power made easy... even for MRI
+# Legion
 
-Legion leverages distibuted Ruby (DRb) & threads to provide concurrent processing power.
+[![Dependency Status](https://gemnasium.com/hopsoft/legion.png)](https://gemnasium.com/hopsoft/legion)
+[![Code Climate](https://codeclimate.com/github/hopsoft/legion.png)](https://codeclimate.com/github/hopsoft/legion)
+
+### Concurrent processing made easy... even for MRI
+
+Legion leverages distibuted Ruby (DRb) & threads to provide real concurrency.
 
 * Works for all Rubies (including MRI)
 * Takes care of the heavy lifting for you
@@ -32,15 +37,14 @@ Use the Legion::Object defined above.
 
 ```ruby
 def work_fast
-  supervisor = Legion::Supervisor.new(Worker, processes: 7)
-  supervisor.start_remote_instances(port: 42042)
+  supervisor = Legion::Supervisor.new(Worker, processes: 7, port: 42042)
+  supervisor.start
 
   1000.times do |i|
-    worker = supervisor.get_remote_instance
-    worker.work_async
+    worker = supervisor.work # the supervisor asynchronously delegates to the worker
   end
 
-  supervisor.stop_remote_instances
+  supervisor.stop
 end
 ```
 

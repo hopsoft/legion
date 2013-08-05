@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Legion::VERSION
   spec.authors       = ["Nathan Hopkins"]
   spec.email         = ["natehop@gmail.com"]
-  spec.description   = "True concurrent processing power made easy... even for MRI."
-  spec.summary       = "True concurrent processing power made easy... even for MRI."
+  spec.description   = "Concurrent processing made easy... even for MRI."
+  spec.summary       = "Concurrent processing made easy... even for MRI."
   spec.homepage      = "https://github.com/hopsoft/legion"
   spec.license       = "MIT"
 

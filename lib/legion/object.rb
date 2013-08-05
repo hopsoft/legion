@@ -6,8 +6,6 @@ module Legion
   class Object
     include MonitorMixin
 
-    attr_reader :pid, :uri
-
     class << self
       def method_added(name)
         return if name =~ /_async\z/i
@@ -30,6 +28,8 @@ module Legion
         callbacks[:before][name] = block
       end
     end
+
+    attr_reader :pid, :uri
 
     def ok?
       true

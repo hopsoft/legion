@@ -1,28 +1,19 @@
 require_relative "../lib/legion"
 
 class Example < Legion::Object
+  before(:work) { puts "before work" }
 
   def work(index)
+    puts "working on: #{index}"
     sleep 2
   end
-
-  before :work do
-    puts "before work"
-  end
-
 end
 
 def run_example
-  supervisor = Legion::Supervisor.new(Example, processes: 7)
-  supervisor.start_remote_instances(port: 42042)
-
-  1000.times do |i|
-    worker = supervisor.get_remote_instance
-    worker.work_async(i)
-    puts i
-  end
-
-  supervisor.stop_remote_instances
+  supervisor = Legion::Supervisor.new(Example, processes: 7, port: 52042)
+  supervisor.start
+  1000.times { |i| supervisor.work(i) }
+  supervisor.stop
 end
 
 run_example
