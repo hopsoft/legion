@@ -3,11 +3,11 @@
 [![Dependency Status](https://gemnasium.com/hopsoft/legion.png)](https://gemnasium.com/hopsoft/legion)
 [![Code Climate](https://codeclimate.com/github/hopsoft/legion.png)](https://codeclimate.com/github/hopsoft/legion)
 
-### Concurrent processing made easy... even for MRI
+### Concurrent processing made easy
 
 Legion leverages distibuted Ruby (DRb) & threads to provide real concurrency.
 
-* Works for all Rubies (including MRI)
+* Works with all Rubies (including MRI)
 * Works within Rails & other frameworks
 * Takes care of the heavy lifting for you
 * Lets you focus on business logic
