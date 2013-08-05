@@ -27,7 +27,7 @@ class Worker < Legion::Object
 
   # runs before each method invocation
   before :work do
-    # do things like datbase reconnects etc...
+    # db reconnect, etc...
   end
 
 end
