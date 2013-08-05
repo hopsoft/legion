@@ -13,7 +13,7 @@ Legion leverages distibuted Ruby (DRb) & threads to provide real concurrency.
 
 ## Quick Start
 
-Desgin a class that will perform a single task concurrently.
+Create a class that performs a single task.
 
 ```ruby
 class Worker < Legion::Object
