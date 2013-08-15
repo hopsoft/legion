@@ -73,8 +73,7 @@ They do this by forking the main process then starting a DRb server backed by th
 
 Legion::Supervisors wrap a Legion::Object and provide helper methods for managing a cluster of remote objects.
 For example, starting a cluster & shutting one down.
-
-The supervisor also properly identifies Legion::Objects available to perform work.
+The supervisor also delegates method calls to the cluster.
 
 ![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/supervisor.png)
 
