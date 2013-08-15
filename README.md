@@ -62,10 +62,14 @@ legion_demo
 
 ## How it Works
 
+### Legion::Object
+
 Legion::Objects know how to create remote instances of themselves.
 They do this by forking the main process then starting a DRb server backed by themselves.
 
 ![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/object.png)
+
+### Legion::Supervisor
 
 Legion::Supervisors wrap a Legion::Object and provide helper methods for managing a cluster of remote objects.
 For example, starting a cluster & shutting one down.
