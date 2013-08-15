@@ -12,6 +12,7 @@ module Legion
         define_method "#{name}_async" do |*args|
           Thread.new do
             synchronize { @busy = true }
+            sleep 0
             self.class.callbacks[:before][name].call unless self.class.callbacks[:before][name].nil?
             send(name, *args)
             synchronize { @busy = false }
