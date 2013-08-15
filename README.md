@@ -88,4 +88,12 @@ The distinction being that they asynchronously delegate method calls to the clus
 
 ![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/async.png)
 
+### Round-Robin Processing
+
+The supervisor queries for remote objects in sequence.
+If the next reote object is busy, the supervisor waits for it to complete before delegating more work to it.
+
+This round-robin strategy allows work to be delegated equally across N number of processes.
+
+![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/get_remote_instance.png)
 
