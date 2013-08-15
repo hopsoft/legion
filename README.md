@@ -60,3 +60,11 @@ gem install legion
 legion_demo
 ```
 
+## How it works
+
+Legion::Objects know how to create remote instances of themselves.
+They do this by forking the main process then starting a DRb server backed by themselves.
+
+![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/object.png)
+
+
