@@ -77,3 +77,15 @@ The supervisor also delegates method calls to the cluster.
 
 ![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/supervisor.png)
 
+### Async Method Invocation
+
+Legion::Objects implicitly create async versions of all defined methods.
+These async methods delegate to the real method on another thread and return immediately.
+The Legion::Object is considered __busy__ while the background thread is working.
+
+Legion::Supervisors respond to any methods defined on the wrapped Legion::Object.
+The distinction being that they asynchronously delegate method calls to the cluster.
+
+![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/async.png)
+
+
