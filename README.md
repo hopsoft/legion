@@ -3,11 +3,11 @@
 [![Dependency Status](https://gemnasium.com/hopsoft/legion.png)](https://gemnasium.com/hopsoft/legion)
 [![Code Climate](https://codeclimate.com/github/hopsoft/legion.png)](https://codeclimate.com/github/hopsoft/legion)
 
-### Concurrent processing made easy
+### Parallel processing made easy
 
-Legion leverages distibuted Ruby (DRb) & threads to provide real concurrency.
+Legion leverages distibuted Ruby (DRb) & threads to give you concurrency & parallel computing power.
 
-* True concurrency with MRI
+* True parallelism with MRI
 * Works within Rails & other frameworks
 * Takes care of the heavy lifting for you
 * Lets you focus on business logic
@@ -36,7 +36,7 @@ class Worker < Legion::Object
 end
 ```
 
-Use a supervisor to perform work concurrently.
+Use a supervisor to perform work in parallel.
 
 ```ruby
 def work_fast
