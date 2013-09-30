@@ -12,6 +12,9 @@ Legion leverages distibuted Ruby (DRb) & threads to give you concurrency & paral
 * Takes care of the heavy lifting for you
 * Lets you focus on business logic
 
+**Designed for one-off tasks that might benefit from parallel processing.**
+*For more formal needs, reach for [Sidkiq](https://github.com/mperham/sidekiq).*
+
 *Requires Ruby 2.0*
 
 ## Quick Start
