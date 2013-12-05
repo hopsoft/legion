@@ -95,7 +95,7 @@ The distinction being that they asynchronously delegate method calls to the clus
 ### Round-Robin Processing
 
 The supervisor queries for remote objects in sequence.
-If the next reote object is busy, the supervisor waits for it to complete before delegating more work to it.
+If the next remote object is busy, the supervisor waits for it to complete before delegating more work to it.
 
 This round-robin strategy allows work to be delegated equally across N number of processes.
 
