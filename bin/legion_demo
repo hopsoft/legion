@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby --
 
 require "legion"
+#require_relative "../lib/legion"
 
 class Example < Legion::Object
-  before(:work) { puts "before hook invoked" }
+
+  after_fork do
+    puts "object is running in a new process"
+  end
 
   def work(index)
     puts "working on: #{index} ... sleeping for 2 seconds"

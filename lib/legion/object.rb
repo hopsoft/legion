@@ -12,19 +12,18 @@ module Legion
         define_method "#{name}_async" do |*args|
           Thread.new do
             synchronize { @busy = true }
-            self.class.callbacks[:before][name].call unless self.class.callbacks[:before][name].nil?
             send(name, *args)
             synchronize { @busy = false }
           end
         end
       end
 
-      def callbacks
-        @callbacks ||= {before: {}}
+      def after_fork(&block)
+        @after_fork = block
       end
 
-      def before(name, &block)
-        callbacks[:before][name] = block
+      def fork_callback
+        @after_fork ||= lambda {}
       end
     end
 
@@ -43,6 +42,7 @@ module Legion
       @uri = "druby://localhost:#{port}"
       @pid = fork do
         DRb.start_service uri, self
+        self.class.fork_callback.call
         DRb.thread.join
       end
       Process.detach pid
