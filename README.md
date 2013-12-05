@@ -31,8 +31,9 @@ class Worker < Legion::Object
     # expensive operations & logic
   end
 
-  # runs before each method invocation
-  before :work do
+  # runs after the new process has been forked and
+  # after DRb has been started (exposing the object as a service)
+  after_fork do
     # db reconnect, etc...
   end
 
