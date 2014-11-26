@@ -8,11 +8,6 @@
 
 Legion leverages distibuted Ruby (DRb) & threads to give you concurrency & parallel computing power.
 
-* True parallelism with MRI
-* Works within Rails & other frameworks
-* Takes care of the heavy lifting for you
-* Lets you focus on business logic
-
 __NOTE__: Requires Ruby 2.0
 
 ## Quick Start
