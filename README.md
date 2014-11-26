@@ -24,7 +24,6 @@ Create a class that performs a single task.
 
 ```ruby
 class Worker < Legion::Object
-
   # our single task
   # - can be named anything you like
   # - can take as many args as you like
@@ -37,23 +36,20 @@ class Worker < Legion::Object
   after_fork do
     # db reconnect, etc...
   end
-
 end
 ```
 
 Use a supervisor to perform work in parallel.
 
 ```ruby
-def work_fast
-  supervisor = Legion::Supervisor.new(Worker, processes: 7, port: 42042)
-  supervisor.start
+supervisor = Legion::Supervisor.new(Worker, processes: 7, port: 42042)
+supervisor.start
 
-  1000.times do |i|
-    supervisor.work # the supervisor asynchronously delegates to the worker
-  end
-
-  supervisor.stop
+1000.times do |i|
+  supervisor.work # the supervisor asynchronously delegates to the worker
 end
+
+supervisor.stop
 ```
 
 ## Demo
