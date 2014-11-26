@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
   gem.version       = Legion::VERSION
   gem.authors       = ["Nathan Hopkins"]
   gem.email         = ["natehop@gmail.com"]
-  gem.description   = "Concurrent processing made easy... even for MRI."
-  gem.summary       = "Concurrent processing made easy... even for MRI."
+  gem.description   = "Concurrent processing made easy."
+  gem.summary       = "Concurrent processing made easy."
   gem.homepage      = "https://github.com/hopsoft/legion"
   gem.license       = "MIT"
 

@@ -37,11 +37,15 @@ module Legion
     end
 
     def get_remote_instance
-      @index ||= 0
-      remote_instance = remote_instances[@index]
-      sleep 0.01 while remote_instance.busy?
-      @index += 1
-      @index = 0 if @index >= remote_instances.length
+      remote_instance = nil
+      while remote_instance.nil?
+        (0..remote_instances.length - 1).each do |index|
+          next if remote_instances[index].busy?
+          remote_instance = remote_instances[index]
+          break
+        end
+        sleep 0.01 if remote_instance.nil?
+      end
       remote_instance
     end
 

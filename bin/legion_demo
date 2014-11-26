@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby --
+#!/usr/bin/env ruby
 
 require "legion"
 #require_relative "../lib/legion"
@@ -10,8 +10,9 @@ class Example < Legion::Object
   end
 
   def work(index)
-    puts "working on: #{index} ... sleeping for 2 seconds"
-    sleep 2
+    duration = rand(4)
+    puts "working on: #{index} ... sleeping for #{duration} seconds"
+    sleep duration
   end
 end
 
@@ -19,7 +20,7 @@ def run_example
   puts "Starting 4 processes to run the demo."
   supervisor = Legion::Supervisor.new(Example, processes: 4, port: 52042)
   supervisor.start
-  1000.times { |i| supervisor.work(i) }
+  100.times { |i| supervisor.work(i) }
   supervisor.stop
 end
 

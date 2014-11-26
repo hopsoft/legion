@@ -1,4 +1,4 @@
-[![Lines of Code](http://img.shields.io/badge/lines_of_code-151-brightgreen.svg?style=flat)](http://blog.codinghorror.com/the-best-code-is-no-code-at-all/)
+[![Lines of Code](http://img.shields.io/badge/lines_of_code-120-brightgreen.svg?style=flat)](http://blog.codinghorror.com/the-best-code-is-no-code-at-all/)
 [![Code Status](http://img.shields.io/codeclimate/github/hopsoft/legion.svg?style=flat)](https://codeclimate.com/github/hopsoft/legion)
 [![Dependency Status](http://img.shields.io/gemnasium/hopsoft/legion.svg?style=flat)](https://gemnasium.com/hopsoft/legion)
 
@@ -13,10 +13,7 @@ Legion leverages distibuted Ruby (DRb) & threads to give you concurrency & paral
 * Takes care of the heavy lifting for you
 * Lets you focus on business logic
 
-**Designed for one-off tasks that might benefit from parallel processing.**
-*For more formal needs, reach for [Sidkiq](https://github.com/mperham/sidekiq).*
-
-*Requires Ruby 2.0*
+__NOTE__: Requires Ruby 2.0
 
 ## Quick Start
 
@@ -73,8 +70,11 @@ They do this by forking the main process then starting a DRb server backed by th
 ### Legion::Supervisor
 
 Legion::Supervisors wrap a Legion::Object and provide helper methods for managing a cluster of remote objects.
-For example, starting a cluster & shutting one down.
-The supervisor also delegates method calls to the cluster.
+
+Supervisors perform the following operations.
+
+- Start & stop the cluster of remote objects
+- Delegate messages (i.e. method calls) to the cluster
 
 ![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/supervisor.png)
 
@@ -89,12 +89,6 @@ The distinction being that they asynchronously delegate method calls to the clus
 
 ![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/async.png)
 
-### Round-Robin Processing
-
-The supervisor queries for remote objects in sequence.
-If the next remote object is busy, the supervisor waits for it to complete before delegating more work to it.
-
-This round-robin strategy allows work to be delegated equally across N number of processes.
-
-![Legion::Object](https://raw.github.com/hopsoft/legion/master/doc/get_remote_instance.png)
+The supervisor delegates work to the first idle Legion::Object it identifies.
+If all objects are busy, the supervisor will block & wait.
 
