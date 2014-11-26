@@ -1,7 +1,8 @@
-# Legion
+[![Lines of Code](http://img.shields.io/badge/lines_of_code-151-brightgreen.svg?style=flat)](http://blog.codinghorror.com/the-best-code-is-no-code-at-all/)
+[![Code Status](http://img.shields.io/codeclimate/github/hopsoft/legion.svg?style=flat)](https://codeclimate.com/github/hopsoft/legion)
+[![Dependency Status](http://img.shields.io/gemnasium/hopsoft/legion.svg?style=flat)](https://gemnasium.com/hopsoft/legion)
 
-[![Dependency Status](https://gemnasium.com/hopsoft/legion.png)](https://gemnasium.com/hopsoft/legion)
-[![Code Climate](https://codeclimate.com/github/hopsoft/legion.png)](https://codeclimate.com/github/hopsoft/legion)
+# Legion
 
 ### Parallel processing made easy
 
