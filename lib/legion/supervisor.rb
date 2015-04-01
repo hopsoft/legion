@@ -18,6 +18,12 @@ module Legion
       @remote_instances = []
     end
 
+    def run
+      start
+      yield self
+      stop
+    end
+
     def start
       DRb.start_service
       (1..processes).each do |i|
