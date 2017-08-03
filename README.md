@@ -2,13 +2,15 @@
 [![Code Status](http://img.shields.io/codeclimate/github/hopsoft/legion.svg?style=flat)](https://codeclimate.com/github/hopsoft/legion)
 [![Dependency Status](http://img.shields.io/gemnasium/hopsoft/legion.svg?style=flat)](https://gemnasium.com/hopsoft/legion)
 
+<a href="https://app.codesponsor.io/link/QMSjMHrtPhvfmCnk5Hbikhhr/hopsoft/legion"><img src="https://app.codesponsor.io/embed/QMSjMHrtPhvfmCnk5Hbikhhr/hopsoft/legion.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
+
 # Legion
 
 ### Parallel processing made easy
 
 Legion leverages distibuted Ruby (DRb) & threads to give you concurrency & parallel computing power.
 
-__NOTE__: Requires Ruby 2.0
+__NOTE__: Requires Ruby 2+
 
 ## Quick Start
 
